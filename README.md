@@ -108,7 +108,7 @@ openssl.cnf by searching for subjectAltName and replacing the value after 'subje
 
 ```
 sudo vim /etc/ssl/openssl.cnf
-subjectAltName=IP:8.131.254.254 in /etc/ssl/openss.cnf
+subjectAltName=IP:20.185.38.158 in /etc/ssl/openss.cnf
 ```
 
 ~~The IP should be an external IP if this is done in Aliyun box, regular IP address if in on-premise network environment
