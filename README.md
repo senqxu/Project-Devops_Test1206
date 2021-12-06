@@ -27,13 +27,13 @@ Please follow this [link](https://docs.docker.com/compose/install/) to install d
 
 #### 3. Import self-signed ssl certificate
 
-The self-signed certificate is generated in the aliyuan box: 8.131.254.254. Execute the following command lines to
+The self-signed certificate is generated in the aliyuan box: 20.185.38.158. Execute the following command lines to
 import the certificate:
 
 ```
-mkdir -p /etc/docker/certs.d/8.131.254.254:5000
+mkdir -p /etc/docker/certs.d/20.185.38.158:5000
 cp /home/kafka/workspace/nextgen/devops/docker/registry/docker_reg_certs/ca.crt \
-  /etc/docker/certs.d/8.131.254.254:5000/
+  /etc/docker/certs.d/20.185.38.158:5000/
 #reload docker daemon to use the certificate
 sudo service docker reload
 ```
@@ -41,11 +41,11 @@ sudo service docker reload
 #### 4. Test the docker installation
 
 ```
-docker login https://8.131.254.254:5000/
+docker login https://20.185.38.158:5000/
 # username: nextgen
 # password: will be shared via teams chat
 # pull a docker image from the private docker registry
-docker pull 8.131.254.254:5000/ordersservice
+docker pull 20.185.38.158:5000/ordersservice
 ```
 
 #### 5. Try to build a docker image for a microservice
@@ -57,10 +57,10 @@ docker build -t microsservice .
 # this will show a list of local docker images
 docker images
 # push the newly built image to the aliyuan docker registry
-docker tag ordersservice 8.131.254.254:5000/ordersservice
+docker tag ordersservice 20.185.38.158:5000/ordersservice
 # the image should be uploaded to the private docker registry 
 # if the following commandline is successfully run
-docker push 8.131.254.254:5000/ordersservice
+docker push 20.185.38.158:5000/ordersservice
 ```
 
 The [Dockfile](https://github.com/zjlhxq/nextgen/tree/masteel/apps/ordersservice/Dockerfile)
