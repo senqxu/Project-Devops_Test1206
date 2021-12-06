@@ -1,0 +1,26 @@
+spring.profiles.active: ${SPRING_PROFILE:dev}
+
+server.port: 8080
+server.servlet.context-path: /public/api
+
+
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xsq_appDB
+    username: "xsq"
+    password: "!xsq123"
+
+      ## Hibernate Properties
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+
+springdoc.version: v1
+
+# admin server specific configuration
+spring.application.name: certer-mall
+
+management.endpoints.web.exposure.include: "*"
